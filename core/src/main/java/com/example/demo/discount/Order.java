@@ -1,4 +1,4 @@
-package discount;
+package com.example.demo.discount;
 
 public class Order {
 	

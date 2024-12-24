@@ -1,4 +1,4 @@
-package discount;
+package com.example.demo.discount;
 
 import com.example.demo.member.Member;
 

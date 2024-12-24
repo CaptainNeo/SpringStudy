@@ -5,14 +5,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.AppConfig;
+import com.example.demo.discount.Order;
+import com.example.demo.discount.OrderService;
+import com.example.demo.discount.OrderServiceImpl;
 import com.example.demo.member.Grade;
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberService;
 import com.example.demo.member.MemberServiceImpl;
-
-import discount.Order;
-import discount.OrderService;
-import discount.OrderServiceImpl;
 
 public class OrderServiceTest {
 	MemberService memberService;

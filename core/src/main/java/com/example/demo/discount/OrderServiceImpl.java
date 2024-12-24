@@ -1,9 +1,13 @@
-package discount;
+package com.example.demo.discount;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberRepository;
 import com.example.demo.member.MemoryMemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 	
 //	private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
@@ -13,6 +17,7 @@ public class OrderServiceImpl implements OrderService {
 	private final MemberRepository memberRepository; // = new MemoryMemberRepository();
 	private final DiscountPolicy discountPolicy;  // 인터페이스만 의존하게
 	
+	@Autowired
 	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {  // 생성자를 통해서 어떤 구현 객체를 주입할지는 오직 외부 AppConf에서 결정 
 		this.memberRepository = memberRepository;
 		this.discountPolicy = discountPolicy;
@@ -25,5 +30,10 @@ public class OrderServiceImpl implements OrderService {
 		return new Order(memberId, itemName, itemPrice, discountPrice);
 		
 	}
+	
+	 //테스트 용도
+	public MemberRepository getMemberRepository() {
+		return memberRepository;
+    }
 
 }
