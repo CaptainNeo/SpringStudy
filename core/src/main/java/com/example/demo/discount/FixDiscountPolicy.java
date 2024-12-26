@@ -1,5 +1,7 @@
 package com.example.demo.discount;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.member.Grade;
 import com.example.demo.member.Member;
 

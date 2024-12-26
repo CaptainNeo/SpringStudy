@@ -7,7 +7,10 @@ import com.example.demo.member.Member;
 import com.example.demo.member.MemberRepository;
 import com.example.demo.member.MemoryMemberRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Component
+@RequiredArgsConstructor  // 자동 의존관계 주입
 public class OrderServiceImpl implements OrderService {
 	
 //	private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
@@ -17,11 +20,11 @@ public class OrderServiceImpl implements OrderService {
 	private final MemberRepository memberRepository; // = new MemoryMemberRepository();
 	private final DiscountPolicy discountPolicy;  // 인터페이스만 의존하게
 	
-	@Autowired
-	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {  // 생성자를 통해서 어떤 구현 객체를 주입할지는 오직 외부 AppConf에서 결정 
-		this.memberRepository = memberRepository;
-		this.discountPolicy = discountPolicy;
-	}
+	// @RequiredArgsConstructor 필수파라미터로 생성자를 자동 생성 
+//	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {  // 생성자를 통해서 어떤 구현 객체를 주입할지는 오직 외부 AppConf에서 결정 
+//		this.memberRepository = memberRepository;
+//		this.discountPolicy = discountPolicy;
+//	}
 	
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
 		
